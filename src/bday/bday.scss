@@ -1,0 +1,48 @@
+
+$mainColor: rgb(114, 153, 124);
+$secondaryColor: #eee0cbff;
+$thirdColor: #bfd7eaff;
+
+$width: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content 
+        
+    }   
+}
+
+
+.container{
+    width: 70%;
+    height: 85%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.button{
+    cursor: pointer;
+}
+
+
+.title {
+  padding: 1em;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  font-family: 'Satisfy', cursive;
+}
+
+.kuromi {
+    height: 14%;
+    position: absolute;
+    top: 85%
+}
+
