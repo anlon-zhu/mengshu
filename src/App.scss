@@ -8,6 +8,14 @@ $mainColor: rgb(77, 82, 78);
 $secondaryColor: antiquewhite;
 $thirdColor: rgb(253, 180, 213);
 
+
+@mixin mobile {
+  @media (max-width: #{$width}){
+      @content 
+      
+  }   
+}
+
 .app {
   height: 100vh;
   background-color: $mainColor;
@@ -20,6 +28,14 @@ $thirdColor: rgb(253, 180, 213);
   position: absolute;
   top: 45%;
   left: 47%;
+
+
+  @include mobile {
+    padding: 0;
+    margin: 0;
+    left: 38%;
+  }
+  
 }
 
 .main-button {
@@ -36,6 +52,7 @@ $thirdColor: rgb(253, 180, 213);
   font-weight: bold;
   text-shadow: 1px 1px white;
   font-family: 'Gill Sans';
+
 }
 .main-button:hover {
   background-color: $secondaryColor;

@@ -14,7 +14,7 @@ export default function Bday() {
   <ReactAudioPlayer
   src={song}
   autoPlay = {true}
-  volume = {0.01}
+  volume = {0.03}
   />
   </div>
   );
