@@ -8,13 +8,30 @@ import Note from './note/Note';
 function App() {
     const [galOpen, setGalOpen] = useState(0);
     const [surprise, setSurprise] = useState(true);
+    const [pswd, setPswd] = useState('');
     const { innerWidth: width, innerHeight: height } = window;
+    const checkPswd = event => {
+    event.preventDefault();
+
+  var confirmPassword = "iloveu";
+  var password = document.getElementById("pswd").value;
+  if (password === confirmPassword) {
+       setSurprise(false);
+  }
+  else{
+      alert("Passwords do not match.");
+  }
+  }
+
 
     return (
     <div className="app">
     {(surprise) ?
       <div className="main">
-         <button className="main-button" onClick={() =>  {setSurprise(false)}}>Click Here!</button>
+        <form onSubmit={checkPswd}>
+          <input className="password" type="text" value={pswd} id="pswd" placeholder="Password" onChange={event => setPswd(event.target.value)}></input>
+          <button className="main-button" type='submit'> Go!</button>
+          </form>
       </div>
       :
       <div className="layout">
